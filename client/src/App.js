@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import Navbar from './components/Navbar';
 
 const App = () => {
   const [donations, setDonations] = useState([]);
@@ -35,6 +36,7 @@ const App = () => {
   return (
     <div>
       <h1>Donation Tracker</h1>
+      <Navbar />
 
       <form onSubmit={handleDonationSubmit}>
         <input
