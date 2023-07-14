@@ -12,7 +12,7 @@ const App = () => {
 
   const fetchDonations = async () => {
     try {
-      const response = await axios.get('/donations');
+      const response = await axios.get('http://localhost:5000/donations'); // Updated the URL to include the backend server's address
       setDonations(response.data);
     } catch (error) {
       console.error('Failed to fetch donations', error);
@@ -23,7 +23,7 @@ const App = () => {
     e.preventDefault();
 
     try {
-      await axios.post('/donations', { name, amount });
+      await axios.post('http://localhost:5000/donations', { name, amount }); // Updated the URL to include the backend server's address
       setName('');
       setAmount('');
       fetchDonations();
